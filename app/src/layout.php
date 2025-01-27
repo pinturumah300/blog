@@ -25,6 +25,7 @@ include_once("./helper/url.php");
         include "./header.php";
         ?>
     </div>
+
     <section class="main container">
         <?php
         //include "./content.php";
@@ -34,7 +35,6 @@ include_once("./helper/url.php");
 
     <footer class="bg-dark text-light py-4">
         <?php
-        include "./banner.html";
         include "./footer.php";
         ?>
     </footer>

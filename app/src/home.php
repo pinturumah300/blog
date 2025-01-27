@@ -1,13 +1,19 @@
 <?php
 ob_start();
 ?>
-<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+<!-- 
+ <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
     <div class="col-lg-6 px-0">
         <h1 class="display-4 fst-italic">Selamat datang di blog milik saya</h1>
         <p class="lead my-3">Bagian ini menampilkan beberapa artikel yang saya tulis.</p>
         <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
     </div>
-</div>
+</div> 
+-->
+
+<?php
+include './banner.php';
+?>
 
 <div class="row mb-2">
     <div class="col-md-6">

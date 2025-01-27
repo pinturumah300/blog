@@ -38,8 +38,12 @@ services:
       MYSQL_DATABASE: blog
       MYSQL_USER: biky
       MYSQL_PASSWORD: begucool
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+      MYSQL_INITDB_SKIP_TZINFO: 1
     volumes:
       - ../db/data/:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf
     networks:
       - my_network 
 
