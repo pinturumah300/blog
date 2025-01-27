@@ -2,7 +2,7 @@
     <div id="slideshow" class="position-relative">
         <!-- Slide 1 -->
         <div class="slide position-absolute w-100">
-            <img src="/img/1.png" class="w-100 h-100 object-fit-cover" alt="Foto 1">
+            <img src="/img/blue.png" class="w-100 h-100 object-fit-cover" alt="Foto 1">
             <div class="caption position-absolute bottom-0 start-0 bg-dark text-white p-3">
                 Deskripsi Foto 1
             </div>
@@ -10,7 +10,7 @@
 
         <!-- Slide 2 -->
         <div class="slide position-absolute w-100">
-            <img src="/img/2.png" class="w-100 h-100 object-fit-cover" alt="Foto 2">
+            <img src="/img/star.png" class="w-100 h-100 object-fit-cover" alt="Foto 2">
             <div class="caption position-absolute bottom-0 start-0 bg-dark text-white p-3">
                 Deskripsi Foto 2
             </div>
@@ -18,7 +18,7 @@
 
         <!-- Slide 3 -->
         <div class="slide position-absolute w-100">
-            <img src="./img/3.png" class="w-100 h-100 object-fit-cover" alt="Foto 3">
+            <img src="./img/set.png" class="w-100 h-100 object-fit-cover" alt="Foto 3">
             <div class="caption position-absolute bottom-0 start-0 bg-dark text-white p-3">
                 Deskripsi Foto 3
             </div>

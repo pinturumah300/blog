@@ -314,6 +314,7 @@ include './banner.php';
     </div>
 </div>
 <?php
+$title = "Selamat datang kedalam blog saya";
 // Tangkap output dalam buffer ke dalam variabel
 $content = ob_get_clean();
 

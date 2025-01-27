@@ -12,9 +12,8 @@
             <h5 class="text-uppercase">Navigasi</h5>
             <ul class="list-unstyled">
                 <li><a href="/" class="text-light text-decoration-none">Beranda</a></li>
-                <li><a href="/about" class="text-light text-decoration-none">Tentang</a></li>
-                <li><a href="/blog" class="text-light text-decoration-none">Blog</a></li>
-                <li><a href="/contact" class="text-light text-decoration-none">Kontak</a></li>
+                <li><a href="/about.php" class="text-light text-decoration-none">Tentang</a></li>
+                <li><a href="/kontak.php" class="text-light text-decoration-none">Kontak</a></li>
             </ul>
         </div>
 
@@ -22,13 +21,13 @@
         <div class="col-md-4 mb-3">
             <h5 class="text-uppercase">Ikuti Saya</h5>
             <a href="https://facebook.com" target="_blank" class="btn btn-outline-light btn-sm me-2">
-                <i class="bi bi-facebook"></i> Facebook
+            <i class="fab fa-facebook"></i> Facebook
             </a>
             <a href="https://instagram.com" target="_blank" class="btn btn-outline-light btn-sm me-2">
-                <i class="bi bi-instagram"></i> Instagram
+                <i class="fab fa-instagram"></i> Instagram
             </a>
             <a href="https://twitter.com" target="_blank" class="btn btn-outline-light btn-sm">
-                <i class="bi bi-twitter"></i> Twitter
+                <i class="fab fa-twitter"></i> Twitter
             </a>
         </div>
     </div>

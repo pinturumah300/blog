@@ -377,6 +377,7 @@ include './banner.php';
 </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
 <?php
+$title = "Tentang Sekolah Saya";
 // Tangkap output dalam buffer ke dalam variabel
 $content = ob_get_clean();
 
