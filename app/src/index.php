@@ -1,3 +1,2 @@
-<?php 
-echo "Nama Saya Bikky"
-?>
+<?php
+include("./home.php");
