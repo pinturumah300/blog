@@ -1,0 +1,39 @@
+FROM php:8.2-fpm
+#FROM php:8.2-fpm-alpine
+
+# Update apk dan install dependensi
+
+#RUN docker-php-ext-install mysqli intl
+# Install MySQL extension
+RUN docker-php-ext-install mysqli
+
+# RUN apk update && apk upgrade && apk --no-cache add \
+#     libpng-dev \
+#     libjpeg-turbo-dev \
+#     libwebp-dev \
+#     freetype-dev \
+#     libxml2-dev \
+#     curl-dev \
+#     zlib-dev \
+#     icu-dev && \
+#     docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp && \
+#     docker-php-ext-install gd && \
+#     docker-php-ext-install mysqli && \
+#     docker-php-ext-install intl && \
+#     docker-php-ext-install mbstring && \
+#     docker-php-ext-install curl
+
+# Clean up
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Salin php.ini ke dalam kontainer
+COPY ./php.ini /usr/local/etc/php/conf.d/
+
+# Salin aplikasi ke dalam kontainer
+#COPY . /var/www/html/
+
+# Setel working directory
+WORKDIR /var/www/html
+
+# Jalankan aplikasi
+CMD ["php-fpm"]

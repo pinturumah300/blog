@@ -1,0 +1,64 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: nginx_web
+    ports:
+      - "80:80"
+    volumes:
+      - ./fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+      - ../app/public:/var/www/html
+      - ../app/src/index.php:/var/www/html/index.php
+    depends_on:
+      - php
+    networks:
+      - my_network
+
+  php:
+    image: php:8.1-fpm
+    container_name: php_fpm
+    volumes:
+      - ../app/src:/var/www/html
+    networks:
+      - my_network
+
+  db:
+    container_name: "mysqldb"
+    image: mysql:8.1
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Gr0t!
+      MYSQL_DATABASE: blog
+      MYSQL_USER: biky
+      MYSQL_PASSWORD: begucool
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+      MYSQL_INITDB_SKIP_TZINFO: 1
+    volumes:
+      - ../db/data/:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf
+    networks:
+      - my_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+    networks:
+      - my_network
+
+# volumes:
+#   db_data:
+#     driver: local
+
+networks:
+  my_network:
+    driver: bridge
