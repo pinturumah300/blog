@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: 'nginx'
+    container_name: "nginx"
     image: nginx:alpine
     ports:
       - "80:80"
@@ -11,25 +11,28 @@ services:
       - ../app/public:/var/www/html
       - ../app/src/index.php:/var/www/html/index.php
     depends_on:
-      - php
+      - phpfpm
     networks:
       - my_network
 
-  php:
-    container_name: 'phpfpm'
-    image: php:8.2-fpm-alpine
-    volumes: 
+  phpfpm:
+    container_name: "phpfpm"
+    build:
+      context: .
+      dockerfile: php-dockerfile
+    image: php:8.2-fpm
+    volumes:
       - ../app/src:/var/www/html
     environment:
       - PHP_DISPLAY_ERRORS=1
       - PHP_MEMORY_LIMIT=256M
     depends_on:
-      - db
+      - mysqldb
     networks:
       - my_network
 
-  db:
-    container_name: 'mysqldb'
+  mysqldb:
+    container_name: "mysqldb"
     image: mysql:8.1
     ports:
       - "3306:3306"
@@ -45,7 +48,7 @@ services:
       - ../db/data/:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf
     networks:
-      - my_network 
+      - my_network
 
 networks:
   my_network:

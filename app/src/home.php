@@ -13,6 +13,8 @@ ob_start();
 
 <?php
 include './banner.php';
+require_once './model/tcontent.php';
+$content = getContentBySlug('tentang-saya');
 ?>
 
 <div class="row mb-2">
@@ -69,7 +71,7 @@ include './banner.php';
 </div>
 
 <div class="row g-5">
-    <div class="col-md-8">
+    <!-- <div class="col-md-8">
         <h3 class="pb-4 mb-4 fst-italic border-bottom">
             From the Firehose
         </h3>
@@ -229,6 +231,15 @@ include './banner.php';
             <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
         </nav>
 
+    </div> -->
+    <div class="col-md-8">
+    <?php
+    if ($content->num_rows > 0) {
+        while ($row = $content->fetch_assoc()) {
+            echo $row['body'];
+        }
+    }
+    ?>
     </div>
 
     <div class="col-md-4">
